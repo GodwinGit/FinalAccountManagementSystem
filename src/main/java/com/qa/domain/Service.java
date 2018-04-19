@@ -1,6 +1,8 @@
 package com.qa.domain;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.stream.Stream;
  
 
 public class Service {
@@ -32,6 +34,21 @@ public class Service {
 	public HashMap<Integer, Account> getAccountMap(){
 		return accountMap;
 	}
+	public int getNumOfDuplicates(String name) {
+		int count = 0;
+//		for(Account account: accountMap.values()) {
+//			if(account.getFirstName().equals(name)) {
+		  return (int) accountMap.values().stream().filter(account -> name.equals(account.getFirstName())).count();
+				
+			}
+		
+		
+		 
+		
+		
+	}
 	
-}
+	
+	
+
 

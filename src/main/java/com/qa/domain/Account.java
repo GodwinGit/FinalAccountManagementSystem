@@ -19,5 +19,8 @@ public class Account {
 		return accountNumber;
 	}
 	
+	public String getFirstName() {
+		return firstName;
+	}
 	
 }
