@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import java.util.HashMap;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -69,4 +70,22 @@ public class AccountManagementSystemTest {
 		assertEquals(expected,actual);
 	}
 	
+	@Test
+	public void fistNameDuplicateTest() {
+		Account Godwin = new Account("Godwin","Adeleke",1);
+	    Account Godwin1 = new Account("Godwin","Prince",2);
+	    Account Godwin2 = new Account("Godwin","Abdi",3);
+        service.addAccount(Godwin);
+		service.addAccount(Godwin1);
+		service.addAccount(Godwin2);
+		int expected = 3;
+		int actual = service.getNumOfDuplicates("Godwin");
+		Assert.assertEquals(expected,actual);
+		
+		
+		
+		
+		
+		
+	}
 }

@@ -32,6 +32,19 @@ public class Service {
 	public HashMap<Integer, Account> getAccountMap(){
 		return accountMap;
 	}
+	public int getNumOfDuplicates(String name) {
+		int count = 0;
+		for(Account account: accountMap.values()) {
+			if(account.getFirstName().equals(name)) {
+				++count;
+			}
+		}
+		return count; 
+		
+		
+	}
+	
+	
 	
 }
 
